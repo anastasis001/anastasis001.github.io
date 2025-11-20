@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Name | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    header {
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 0.25rem 0;
+      color: #9ca3af;
+    }
+    .tagline {
+      margin-top: 0.75rem;
+      font-size: 1.05rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+    section {
+      margin-top: 2.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #1f2937;
+      padding-bottom: 0.5rem;
+    }
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: #020617;
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #1f2937;
+    }
+    .project-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .project-meta {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .skills-list li {
+      background: #020617;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid #1f2937;
+      font-size: 0.9rem;
+    }
+    .contact-links a {
+      margin-right: 1rem;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Location • Role (e.g. Web Developer)</p>
+    <p class="tagline">Short 1–2 line summary about what you do and what you’re interested in.</p>
+  </header>
+
+  <main>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project-card">
+          <h3>Project One</h3>
+          <p class="project-meta">Tech: React, Node.js, PostgreSQL</p>
+          <p>
+            Short description of what the app does, who it’s for, and what’s technically interesting.
+          </p>
+          <p>
+            <a href="https://github.com/your-username/your-repo" target="_blank">Source code</a>
+            •
+            <a href="https://your-live-demo-url.com" target="_blank">Live demo</a>
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Project Two</h3>
+          <p class="project-meta">Tech: HTML, CSS, JavaScript</p>
+          <p>
+            Another project description here. Try to highlight different skills (APIs, UI, backend, etc.).
+          </p>
+          <p>
+            <a href="https://github.com/your-username/your-other-repo" target="_blank">Source code</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <!-- Add / edit skills here -->
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        A short paragraph about your background: how you started coding, your interests, and what you’re looking for
+        (e.g. internships, junior roles, freelance work).
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact-links">
+        <a href="mailto:your-email@example.com">Email</a>
+        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+        <a href="https://github.com/your-username" target="_blank">GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
