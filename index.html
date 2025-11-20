@@ -95,19 +95,24 @@
       color: #6b7280;
     }
 
+    .contact-icons {
+      display: flex;
+      justify-content: center;   /* centers the icons */
+      gap: 1rem;                 /* spacing between icons */
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* INDIVIDUAL ICONS */
     .contact-icons img {
-      width: 32px;      /* ← change this number to make icons smaller/bigger */
-      height: 32px;     /* ← keeps them square */
+      width: 32px;
+      height: 32px;
       object-fit: contain;
-      filter: invert(90%);
+      filter: invert(90%);       /* keeps icons light on dark background */
       opacity: 0.9;
       transition: 0.2s ease;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      /* margin-top: 1rem;
-      margin-bottom: 2rem;/* centers icons horizontally */ */
     }
+
     
     .contact-icons img:hover {
       transform: scale(1.15);
