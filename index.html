@@ -94,6 +94,21 @@
       font-size: 0.85rem;
       color: #6b7280;
     }
+
+    .contact-icons img {
+      width: 32px;      /* ← change this number to make icons smaller/bigger */
+      height: 32px;     /* ← keeps them square */
+      object-fit: contain;
+      filter: invert(90%);
+      opacity: 0.9;
+      transition: 0.2s ease;
+    }
+    
+    .contact-icons img:hover {
+      transform: scale(1.15);
+      opacity: 1;
+    }
+    
   </style>
 </head>
 
