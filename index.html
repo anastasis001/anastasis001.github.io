@@ -120,11 +120,12 @@
     }
 
     .project-image {
-  width: 75%;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  object-fit: cover;
-  justify-content: center;
+  width: 75%;          /* makes image smaller → adjust as you like */
+  max-width: 900px;    /* prevents huge images on large screens */
+  display: block;      
+  margin: 0 auto 1rem; /* centers the image horizontally + adds space below */
+  border-radius: 0.75rem;
+  object-fit: contain;
 }
     
     
