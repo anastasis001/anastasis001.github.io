@@ -347,6 +347,7 @@ header {
     const slides = Array.from(track.querySelectorAll("img"));
     const prevBtn = carousel.querySelector(".prev");
     const nextBtn = carousel.querySelector(".next");
+    const counter = carousel.querySelector("[data-counter]"); // ✅ add this
 
     let index = 0;
 
