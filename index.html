@@ -12,11 +12,23 @@
       background: #0f172a; /*dark blue background, white letters*/
       color: #e5e7eb; 
     }
+
     header {
-      padding: 2rem 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+header {
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  text-align: center;       /* centers the text */
+  display: flex;            /* makes header flexible */
+  flex-direction: column;   /* stack elements vertically */
+  align-items: center;      /* centers child elements horizontally */
+}
     header h1 {
       margin: 0 0 0.5rem;
       font-size: 2.5rem;
@@ -143,8 +155,8 @@
 /* Mobile & small tablets */
 @media (max-width: 600px) {
   .profile-pic {
-    width: 200px;    /* mobile size */
-    height: 200px;
+    width: 300px;    /* mobile size */
+    height: 300px;
   }
     
   </style>
