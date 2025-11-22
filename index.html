@@ -133,13 +133,19 @@
 }
 
 .profile-pic {
-  width: 500px;              /* size of the circle */
-  height: 500px;             /* same as width → perfect circle */
-  border-radius: 50%;        /* makes it circular */
-  object-fit: cover;         /* crops rectangular images nicely */
-  box-shadow: 0 0 10px rgba(0,0,0,0.4); /* optional */
+  width: 500px;      /* desktop size */
+  height: 500px;     /* desktop size */
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 4px solid #1f2937; */
 }
-    
+
+/* Mobile & small tablets */
+@media (max-width: 600px) {
+  .profile-pic {
+    width: 200px;    /* mobile size */
+    height: 200px;
+  }
     
   </style>
   
