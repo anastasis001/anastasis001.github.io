@@ -210,6 +210,20 @@ header {
 .carousel-btn:hover {
   background: rgba(0,0,0,0.7);
 }
+
+.carousel-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  font-weight: 500;
+  z-index: 11;
+  backdrop-filter: blur(2px);
+}
   </style>
   
 </head>
@@ -280,6 +294,7 @@ header {
   </div>
 
   <button class="carousel-btn next" aria-label="Next image">›</button>
+  <div class="carousel-counter" data-counter>1 / 2</div>
 </div>
           <p></p>   
           The magnetodydrodynamics (MHD) system results from the combination of Euler's equations, which govern hydrodynamics, and Maxwell's equations, which govern electric and magnetic fields.
@@ -337,6 +352,7 @@ header {
 
     function update() {
       track.style.transform = `translateX(-${index * 100}%)`;
+      counter.textContent = `${index + 1} / ${slides.length}`;
     }
 
     prevBtn.addEventListener("click", () => {
