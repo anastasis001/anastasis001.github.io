@@ -161,26 +161,29 @@ header {
 }
 
 
-  .project-carousel {
+.project-carousel {
   position: relative;
   width: 100%;
+  height: 340px;          /* frame height — tweak if you want */
   overflow: hidden;
   border-radius: 0.75rem;
   margin: 1rem 0;
   border: 1px solid #1f2937;
-  background: #020617;
+  background: white;      /* makes plots readable */
 }
 
 .carousel-track {
   display: flex;
+  height: 100%;
   transition: transform 0.35s ease;
 }
 
 .carousel-track img {
   width: 100%;
+  height: 100%;           /* fill the frame */
   flex: 0 0 100%;
-  object-fit: cover;
-  max-height: 320px;  /* adjust height if you want */
+  object-fit: contain;    /* ✅ show whole image */
+  background: white;      /* avoids dark gutters */
 }
 
 .carousel-btn {
@@ -210,33 +213,6 @@ header {
   
 </head>
 
-
-<script>
-  document.querySelectorAll("[data-carousel]").forEach(carousel => {
-    const track = carousel.querySelector("[data-track]");
-    const slides = Array.from(track.querySelectorAll("img"));
-    const prevBtn = carousel.querySelector(".prev");
-    const nextBtn = carousel.querySelector(".next");
-
-    let index = 0;
-
-    function update() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + slides.length) % slides.length;
-      update();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % slides.length;
-      update();
-    });
-
-    update();
-  });
-</script>
 
 <!--- Main body starts here -->
 
@@ -282,7 +258,6 @@ header {
             poloidal field coils position) are adjusted to optimise key plasma metrics of stability and efficiency (safety factor <em>q</em>, poloidal beta <em>β</em>).
           </p>
           <p class="project-meta">Submitted thesis for the degree of MPhil. in Scientific Computing at the University of Cambridge</p>
-          </p>
             <a href="https://github.com/your-username/your-other-repo" target="_blank">Source code</a>
             <a href="poster.pdf" target="_blank">Poster</a>
             <!-- •
@@ -348,5 +323,33 @@ header {
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  
+<script>
+  document.querySelectorAll("[data-carousel]").forEach(carousel => {
+    const track = carousel.querySelector("[data-track]");
+    const slides = Array.from(track.querySelectorAll("img"));
+    const prevBtn = carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".next");
+
+    let index = 0;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      update();
+    });
+
+    update();
+  });
+</script>
 </body>
 </html>
