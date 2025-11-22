@@ -158,10 +158,84 @@ header {
     width: 300px;    /* mobile size */
     height: 300px;
   }
-    
+
+
+  .project-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  border: 1px solid #1f2937;
+  background: #020617;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+  max-height: 320px;  /* adjust height if you want */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  user-select: none;
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
   </style>
   
 </head>
+
+
+<script>
+  document.querySelectorAll("[data-carousel]").forEach(carousel => {
+    const track = carousel.querySelector("[data-track]");
+    const slides = Array.from(track.querySelectorAll("img"));
+    const prevBtn = carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".next");
+
+    let index = 0;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      update();
+    });
+
+    update();
+  });
+</script>
 
 <!--- Main body starts here -->
 
@@ -218,7 +292,18 @@ header {
         <article class="project-card">
           <h3>Computational magnetohydrodynamics</h3>
           <!-- <p class="project-meta">Tech: HTML, CSS, JavaScript</p> -->
-          <img class="project-image" src="orszang tang.png">
+          <!-- <img class="project-image" src="orszang tang.png"> -->
+          <div class="project-carousel" data-carousel>
+  <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+
+  <div class="carousel-track" data-track>
+    <img src="mhd.jpg" alt="Project image 1">
+    <img src="orszang tang.jpg" alt="Project image 2">
+    <!-- <img src="img3.jpg" alt="Project image 3"> -->
+  </div>
+
+  <button class="carousel-btn next" aria-label="Next image">›</button>
+</div>
           <p></p>   
           The magnetodydrodynamics (MHD) system results from the combination of Euler's equations, which govern hydrodynamics, and Maxwell's equations, which govern electric and magnetic fields.
           Variantes of the MHD system are used to model collective plasma behaviour is areas like nuclear fusion, astrophysics, and lightning.
