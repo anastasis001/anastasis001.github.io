@@ -281,7 +281,18 @@ header {
       <div class="projects">
         <article class="project-card">
           <h3>Simulation and optimisation of tokamak plasma</h3>
-           <img class="project-image" src="images/mast.png">
+                     <div class="project-carousel" data-carousel>
+  <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+
+  <div class="carousel-track" data-track>
+    <img src="images/mast.jpg" alt="Project image 1">
+    <img src="images/flowchart.png" alt="Project image 2">
+    <!-- <img src="img3.jpg" alt="Project image 3"> -->
+  </div>
+
+  <button class="carousel-btn next" aria-label="Next image">›</button>
+  <div class="carousel-counter" data-counter>1 / 2</div>
+</div>
           <p>
             Plasma in nuclear fusion reactors suffers from a number of instabilities that have prevented, so far, the long-awaited breakthorough in the filed.
             Macroscopic computational modelling of fusion plasma involves solving the plasma equilibirum equation, as derived from the magnetohydrodynamics (MHD) governing system of the plasma, 
